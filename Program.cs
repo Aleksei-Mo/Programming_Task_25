@@ -5,7 +5,17 @@ Console.Write("Enter your number A: ");
 double numberA = Convert.ToDouble(Console.ReadLine());
 Console.Write("Enter your natural number B (the power): ");
 int numberB = Convert.ToInt32(Console.ReadLine());
-double result = Power(numberA,numberB);
+double result=0;
+if (numberB>0)
+  {
+   result = Power(numberA,numberB);
+  }
+else
+  {
+   Console.WriteLine("ERROR! The power should be natural number,i.e. 1,2,3,4,5... Try again!");
+   return;
+  }
+
 Console.WriteLine($"Raising {numberA} to the power {numberB} is equal to {result}.");
 
 
@@ -17,6 +27,6 @@ double Power(double basis, int power)
    {
     powerResult=powerResult * basis;
    }
-   
+
  return powerResult;
 }
